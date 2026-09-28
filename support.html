@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>支援 Support｜猴子吱吱 Sassy Monkeys</title>
+<meta name="description" content="猴子吱吱（Sassy Monkeys）支援：恢復購買、換手機進度、卡關、沒有聲音、聯絡開發者。">
+<meta name="theme-color" content="#FFFAF2">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%201024%201024%22%3E%3Crect%20width%3D%221024%22%20height%3D%221024%22%20rx%3D%22230%22%20fill%3D%22%232B1A10%22/%3E%3Ccircle%20cx%3D%22250%22%20cy%3D%22600%22%20r%3D%22120%22%20fill%3D%22%23E9A66B%22/%3E%3Ccircle%20cx%3D%22774%22%20cy%3D%22600%22%20r%3D%22120%22%20fill%3D%22%23E9A66B%22/%3E%3Cellipse%20cx%3D%22512%22%20cy%3D%22560%22%20rx%3D%22300%22%20ry%3D%22260%22%20fill%3D%22%23E9A66B%22/%3E%3Cpath%20d%3D%22M512%20330%20C500%20230%20560%20170%20620%20175%20C690%20180%20700%20270%20650%20285%20C610%20297%20590%20255%20615%20238%22%20fill%3D%22none%22%20stroke%3D%22%23E9A66B%22%20stroke-width%3D%2240%22%20stroke-linecap%3D%22round%22/%3E%3Cellipse%20cx%3D%22512%22%20cy%3D%22640%22%20rx%3D%22210%22%20ry%3D%22150%22%20fill%3D%22%23FDE8CF%22/%3E%3Ccircle%20cx%3D%22440%22%20cy%3D%22610%22%20r%3D%2230%22%20fill%3D%22%232B1A10%22/%3E%3Ccircle%20cx%3D%22584%22%20cy%3D%22610%22%20r%3D%2230%22%20fill%3D%22%232B1A10%22/%3E%3Cpath%20d%3D%22M452%20690%20Q512%20740%20572%20690%22%20fill%3D%22none%22%20stroke%3D%22%232B1A10%22%20stroke-width%3D%2224%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E">
+<style>
+:root{--bg:#FFFAF2;--ink:#2B1A10;--accent:#E07B3A;--muted:#6E5647;--card:#FFFFFF;--line:#EFDFC9;--soft:#FDF0DF;color-scheme:light}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 -apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang TC","Hiragino Sans","Apple SD Gothic Neo","Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;overflow-wrap:anywhere}
+a{color:var(--accent);text-underline-offset:3px}
+a:hover{color:#B85E24}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
+.top{position:sticky;top:0;z-index:5;background:rgba(255,250,242,.94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:12px;min-height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:800;line-height:1.2;margin-right:auto}
+.brand small{display:block;font-weight:600;color:var(--muted);font-size:13px}
+.logo{display:block;flex:none}
+.sw{display:flex;border:1.5px solid var(--ink);border-radius:999px;overflow:hidden;flex:none}
+.sw a{padding:4px 12px;font-size:14px;font-weight:700;text-decoration:none;color:var(--ink)}
+.sw a+a{border-left:1.5px solid var(--ink)}
+.sw .s-zh{background:var(--ink);color:var(--bg)}
+body:has(#en:target) .sw .s-zh{background:transparent;color:var(--ink)}
+body:has(#en:target) .sw .s-en{background:var(--ink);color:var(--bg)}
+.lang{display:none;scroll-margin-top:90px}
+#zh{display:block}
+#en:target{display:block}
+#en:target~#zh{display:none}
+main{padding:8px 0 40px}
+h1{font-size:34px;line-height:1.25;margin:28px 0 8px;letter-spacing:.01em}
+h2{font-size:24px;line-height:1.3;margin:44px 0 12px}
+h3{font-size:19px;line-height:1.35;margin:0 0 6px}
+p{margin:0 0 14px}
+ul{padding-left:1.3em;margin:0 0 14px}
+li{margin:4px 0}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+.hero{text-align:center;padding:28px 0 8px}
+.hero .logo{margin:0 auto 8px;filter:drop-shadow(0 8px 18px rgba(43,26,16,.18))}
+.hero h1{margin:12px 0 0;font-size:40px}
+.hero .sub{font-size:18px;font-weight:700;color:var(--muted);margin:0 0 10px}
+.hero .tag{font-size:19px;max-width:560px;margin:0 auto 20px}
+.btn{display:inline-block;background:var(--ink);color:var(--bg);text-decoration:none;font-weight:800;padding:12px 24px;border-radius:14px}
+.btn:hover{color:var(--bg);background:#4A2F1F}
+.btn .soon{display:block;font-size:12px;font-weight:600;opacity:.8}
+.promise{margin:36px 0 8px;background:var(--ink);color:var(--bg);border-radius:24px;padding:28px 22px;text-align:center}
+.promise .big{font-size:40px;font-weight:900;line-height:1.2;margin:0 0 10px;color:#FFD9BD}
+.promise p{margin:0 0 10px}
+.promise a{color:#FFB98A}
+.cards{display:grid;gap:14px;grid-template-columns:1fr}
+@media (min-width:640px){.cards.two{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px}
+.card.dash{background:transparent;border:2px dashed #D9C3A8;text-align:center;color:var(--muted)}
+.card svg.pic{display:block;width:100%;max-width:170px;height:auto;margin:0 auto 12px}
+.pill{display:inline-block;font-size:13px;font-weight:700;color:var(--accent);background:var(--soft);border-radius:999px;padding:1px 10px;margin-left:6px;vertical-align:2px}
+.price{display:grid;gap:10px;grid-template-columns:1fr}
+@media (min-width:560px){.price{grid-template-columns:1fr 1fr}}
+.price div{background:var(--soft);border-radius:16px;padding:14px 16px}
+.price b{display:block;font-size:18px}
+.tips{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:10px 0 14px}
+@media (min-width:560px){.tips{grid-template-columns:repeat(4,1fr)}}
+.tips div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px;text-align:center;font-weight:700;line-height:1.4}
+.tips span{display:block;font-weight:600;color:var(--muted);font-size:14px}
+.doc h2{font-size:21px;margin:34px 0 8px;padding-top:6px}
+.doc .eff{display:inline-block;background:var(--soft);border-radius:10px;padding:4px 12px;font-weight:700;font-size:15px}
+.hl{background:var(--soft);border-left:5px solid var(--accent);border-radius:12px;padding:14px 16px;margin:18px 0}
+.hl strong{font-size:20px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 16px;margin:10px 0}
+summary{font-weight:800;cursor:pointer}
+details[open] summary{margin-bottom:8px}
+footer{margin-top:48px;border-top:1px solid var(--line);padding:22px 0 30px;text-align:center}
+footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;margin-bottom:10px}
+footer nav a{font-weight:700;text-decoration:none}
+footer nav a[aria-current]{color:var(--ink)}
+footer p{margin:4px 0;font-size:14px;color:var(--muted)}
+</style>
+</head>
+<body>
+<!-- 本站不使用 cookie、分析、追蹤、外部字型或任何第三方腳本。 -->
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html"><svg class="logo" width="40" height="40" viewBox="0 0 1024 1024" role="img" aria-label="猴子吱吱 Sassy Monkeys" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" rx="230" fill="#2B1A10"/><circle cx="250" cy="600" r="120" fill="#E9A66B"/><circle cx="774" cy="600" r="120" fill="#E9A66B"/><ellipse cx="512" cy="560" rx="300" ry="260" fill="#E9A66B"/><path d="M512 330 C500 230 560 170 620 175 C690 180 700 270 650 285 C610 297 590 255 615 238" fill="none" stroke="#E9A66B" stroke-width="40" stroke-linecap="round"/><ellipse cx="512" cy="640" rx="210" ry="150" fill="#FDE8CF"/><circle cx="440" cy="610" r="30" fill="#2B1A10"/><circle cx="584" cy="610" r="30" fill="#2B1A10"/><path d="M452 690 Q512 740 572 690" fill="none" stroke="#2B1A10" stroke-width="24" stroke-linecap="round"/></svg><span>猴子吱吱<small>Sassy Monkeys</small></span></a>
+<nav class="sw" aria-label="語言 Language"><a class="s-zh" href="#zh" lang="zh-Hant">中文</a><a class="s-en" href="#en" lang="en">English</a></nav>
+</div></header>
+<main class="wrap">
+<section id="en" class="lang" lang="en">
+
+<article class="doc">
+<h1>Support</h1>
+<p>Having trouble? Check the questions below. If you can't find an answer, email us at <a href="mailto:harveyyun8622@gmail.com">harveyyun8622@gmail.com</a>.</p>
+
+<h2>FAQ</h2>
+
+<details open><summary>How do I restore my purchases?</summary>
+<p>Tap the gear icon at the top right of the lobby → Settings → Purchase → Restore Purchases. The purchase screen also has a Restore Purchases button.</p>
+<ul><li>Make sure your device is signed in with the same Apple Account you used to buy.</li>
+<li>Family Sharing members also use Restore Purchases to get shared parks.</li>
+<li>"Buy the Developer a Coffee" tips are consumables. They don't need to be restored (and can't be), and they never unlocked anything anyway.</li></ul>
+</details>
+
+<details><summary>Will my progress move to a new phone or survive a reinstall?</summary>
+<p><strong>Generally, no.</strong> To keep our promise of collecting no data, your progress is stored only on this device, and the app never uploads or syncs it to the cloud.</p>
+<ul><li>Unlocked parks: tap Restore Purchases on the new device to get them back for free.</li>
+<li>Level progress: starts over.</li>
+<li>The progress file is excluded from iCloud and computer backups, so restoring a backup or switching phones will not bring your progress along (that is how we keep it truly off the cloud).</li></ul>
+</details>
+
+<details><summary>I'm stuck on a level. What now?</summary>
+<p>Tap <strong>Ask the Old Monkey</strong>. He'll show you the next step and explain why (for example, "this turf has only one square left"). Every level has exactly one solution and never needs guessing.</p>
+<ul><li><strong>Back Off!</strong>: look for a row, column or turf with only one square left. After you place a monkey, its row, column, turf and all 8 surrounding squares can't hold another monkey, so mark them with bananas. You can turn on automatic bananas for every level in Settings.</li>
+<li><strong>Hangry!</strong>: start from corners and squares with only one way to go. Remember that every square must be filled and vines can't cross.</li></ul>
+</details>
+
+<details><summary>There's no sound.</summary>
+<ul><li>Check <strong>Silent mode</strong> first: the Ring/Silent switch on the side of your iPhone, or the Action button on newer models. The app respects Silent mode and never interrupts your music.</li>
+<li>Turn the volume up and check that no Bluetooth headphones or speakers are connected.</li>
+<li>In the app's Settings, make sure Sound Effects and Music are switched on.</li>
+<li>Still silent? Close the app completely from the app switcher and open it again.</li></ul>
+</details>
+
+<details><summary>Do tips unlock anything?</summary>
+<p>No. "Buy the Developer a Coffee" is purely a thank-you and unlocks no features, content or levels.</p>
+</details>
+
+<details><summary>Do you collect my data?</summary>
+<p>No. No tracking, no ads, no account, no servers. See the <a href="privacy.html#en">Privacy Policy</a>.</p>
+</details>
+
+<details><summary>How do I get a refund?</summary>
+<p>All purchases are handled by Apple. Please request a refund from Apple at <a href="https://reportaproblem.apple.com/" rel="noopener">reportaproblem.apple.com</a>.</p>
+</details>
+
+<h2>Contact</h2>
+<p><a href="mailto:harveyyun8622@gmail.com">harveyyun8622@gmail.com</a> · One independent developer; replies usually within a few days.</p>
+<p class="muted">When reporting a problem, include your device model, iOS version, the park and level number, and a screenshot if you can. Your email is used only to reply to you.</p>
+</article>
+
+<footer><nav aria-label="Site pages"><a href="index.html#en">Home</a><a href="privacy.html#en">Privacy Policy</a><a href="terms.html#en">Terms of Use</a><a href="support.html#en" aria-current="page">Support</a></nav><p>Contact: <a href="mailto:harveyyun8622@gmail.com">harveyyun8622@gmail.com</a></p><p>© 2026 musicloveAI</p></footer>
+</section>
+<section id="zh" class="lang" lang="zh-Hant">
+
+<article class="doc">
+<h1>支援</h1>
+<p>遇到問題嗎？先看看下面的常見問題；找不到答案，歡迎寫信給我們：<a href="mailto:harveyyun8622@gmail.com">harveyyun8622@gmail.com</a></p>
+
+<h2>常見問題</h2>
+
+<details open><summary>怎麼恢復購買？</summary>
+<p>大廳右上角的齒輪 →「設定」→「購買」區 →「恢復購買」。購買畫面裡也有「恢復購買」按鈕。</p>
+<ul><li>請確認裝置登入的是當初購買時的同一個 Apple 帳號。</li>
+<li>家人共享的成員也是用「恢復購買」取得共享的樂園。</li>
+<li>「請開發者喝杯咖啡」是打賞（消耗型），不需要、也無法恢復，而且它本來就不解鎖任何東西。</li></ul>
+</details>
+
+<details><summary>換手機或重新安裝，進度會帶過去嗎？</summary>
+<p><strong>基本上不會。</strong>為了不收集任何資料，遊戲進度只存在這台裝置裡，App 不會把進度上傳或同步到雲端。</p>
+<ul><li>已買斷的樂園：在新裝置按「恢復購買」就能免費拿回。</li>
+<li>關卡進度：會從頭開始。</li>
+<li>進度檔已設定不納入 iCloud 備份與電腦備份，所以換手機或從備份回復時，進度不會跟著過去（這是為了做到「完全不上雲端」）。</li></ul>
+</details>
+
+<details><summary>卡關了怎麼辦？</summary>
+<p>按<strong>「問問老猴子」</strong>。老猴子會告訴你下一步，以及為什麼（例如「這塊地盤只剩一格」）。每一關都只有唯一解、不需要猜，一定能靠推理解開。</p>
+<ul><li><strong>不要貼貼！</strong>：先找「只剩一格」的行、列或地盤。放下一隻猴子後，同一行、同一列、同一塊地盤和周圍 8 格都不能再放猴子，可以先用香蕉標起來。設定裡可以打開「每一關都自動放香蕉」。</li>
+<li><strong>香蕉外送中</strong>：先從角落和「只剩一條路可走」的格子下手；記得每一格都要鋪滿，藤蔓不能交叉。</li></ul>
+</details>
+
+<details><summary>沒有聲音？</summary>
+<ul><li>先檢查<strong>靜音</strong>：iPhone 側邊的響鈴／靜音開關，或新款 iPhone 的動作按鈕是否切到靜音。App 會遵守靜音模式，也不會打斷你正在聽的音樂。</li>
+<li>調高音量，並確認沒有連著藍牙耳機或喇叭。</li>
+<li>到 App 的「設定」確認「音效」與「背景音樂」都有打開。</li>
+<li>還是沒聲音：把 App 從多工畫面完全關掉，再重新開啟。</li></ul>
+</details>
+
+<details><summary>打賞會解鎖什麼嗎？</summary>
+<p>不會。「請開發者喝杯咖啡」純粹是心意，不會解鎖任何功能、內容或關卡。</p>
+</details>
+
+<details><summary>你們會收集我的資料嗎？</summary>
+<p>不會。不追蹤、沒有廣告、沒有帳號、沒有伺服器。詳見<a href="privacy.html">隱私權政策</a>。</p>
+</details>
+
+<details><summary>想退款？</summary>
+<p>所有購買由 Apple 處理，請到 <a href="https://reportaproblem.apple.com/" rel="noopener">reportaproblem.apple.com</a> 向 Apple 申請。</p>
+</details>
+
+<h2>聯絡我們</h2>
+<p><a href="mailto:harveyyun8622@gmail.com">harveyyun8622@gmail.com</a>．個人獨立開發，通常幾天內回覆。</p>
+<p class="muted">回報問題時，附上裝置型號、iOS 版本、哪座樂園第幾關，以及截圖，會幫我們更快找到問題。你寄來的信只會用來回覆你。</p>
+</article>
+
+<footer><nav aria-label="網站頁面"><a href="index.html">首頁</a><a href="privacy.html">隱私權政策</a><a href="terms.html">使用條款</a><a href="support.html" aria-current="page">支援</a></nav><p>聯絡：<a href="mailto:harveyyun8622@gmail.com">harveyyun8622@gmail.com</a></p><p>© 2026 musicloveAI</p></footer>
+</section>
+</main>
+</body>
+</html>

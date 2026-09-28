@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>猴子吱吱 Sassy Monkeys</title>
+<meta name="description" content="猴子吱吱（Sassy Monkeys）：欠扁猴子的邏輯益智遊戲。每關唯一解、每座樂園前 20 關免費、沒有廣告、不收集任何資料。">
+<meta name="theme-color" content="#FFFAF2">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%201024%201024%22%3E%3Crect%20width%3D%221024%22%20height%3D%221024%22%20rx%3D%22230%22%20fill%3D%22%232B1A10%22/%3E%3Ccircle%20cx%3D%22250%22%20cy%3D%22600%22%20r%3D%22120%22%20fill%3D%22%23E9A66B%22/%3E%3Ccircle%20cx%3D%22774%22%20cy%3D%22600%22%20r%3D%22120%22%20fill%3D%22%23E9A66B%22/%3E%3Cellipse%20cx%3D%22512%22%20cy%3D%22560%22%20rx%3D%22300%22%20ry%3D%22260%22%20fill%3D%22%23E9A66B%22/%3E%3Cpath%20d%3D%22M512%20330%20C500%20230%20560%20170%20620%20175%20C690%20180%20700%20270%20650%20285%20C610%20297%20590%20255%20615%20238%22%20fill%3D%22none%22%20stroke%3D%22%23E9A66B%22%20stroke-width%3D%2240%22%20stroke-linecap%3D%22round%22/%3E%3Cellipse%20cx%3D%22512%22%20cy%3D%22640%22%20rx%3D%22210%22%20ry%3D%22150%22%20fill%3D%22%23FDE8CF%22/%3E%3Ccircle%20cx%3D%22440%22%20cy%3D%22610%22%20r%3D%2230%22%20fill%3D%22%232B1A10%22/%3E%3Ccircle%20cx%3D%22584%22%20cy%3D%22610%22%20r%3D%2230%22%20fill%3D%22%232B1A10%22/%3E%3Cpath%20d%3D%22M452%20690%20Q512%20740%20572%20690%22%20fill%3D%22none%22%20stroke%3D%22%232B1A10%22%20stroke-width%3D%2224%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E">
+<style>
+:root{--bg:#FFFAF2;--ink:#2B1A10;--accent:#E07B3A;--muted:#6E5647;--card:#FFFFFF;--line:#EFDFC9;--soft:#FDF0DF;color-scheme:light}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 -apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang TC","Hiragino Sans","Apple SD Gothic Neo","Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;overflow-wrap:anywhere}
+a{color:var(--accent);text-underline-offset:3px}
+a:hover{color:#B85E24}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
+.top{position:sticky;top:0;z-index:5;background:rgba(255,250,242,.94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:12px;min-height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:800;line-height:1.2;margin-right:auto}
+.brand small{display:block;font-weight:600;color:var(--muted);font-size:13px}
+.logo{display:block;flex:none}
+.sw{display:flex;border:1.5px solid var(--ink);border-radius:999px;overflow:hidden;flex:none}
+.sw a{padding:4px 12px;font-size:14px;font-weight:700;text-decoration:none;color:var(--ink)}
+.sw a+a{border-left:1.5px solid var(--ink)}
+.sw .s-zh{background:var(--ink);color:var(--bg)}
+body:has(#en:target) .sw .s-zh{background:transparent;color:var(--ink)}
+body:has(#en:target) .sw .s-en{background:var(--ink);color:var(--bg)}
+.lang{display:none;scroll-margin-top:90px}
+#zh{display:block}
+#en:target{display:block}
+#en:target~#zh{display:none}
+main{padding:8px 0 40px}
+h1{font-size:34px;line-height:1.25;margin:28px 0 8px;letter-spacing:.01em}
+h2{font-size:24px;line-height:1.3;margin:44px 0 12px}
+h3{font-size:19px;line-height:1.35;margin:0 0 6px}
+p{margin:0 0 14px}
+ul{padding-left:1.3em;margin:0 0 14px}
+li{margin:4px 0}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+.hero{text-align:center;padding:28px 0 8px}
+.hero .logo{margin:0 auto 8px;filter:drop-shadow(0 8px 18px rgba(43,26,16,.18))}
+.hero h1{margin:12px 0 0;font-size:40px}
+.hero .sub{font-size:18px;font-weight:700;color:var(--muted);margin:0 0 10px}
+.hero .tag{font-size:19px;max-width:560px;margin:0 auto 20px}
+.btn{display:inline-block;background:var(--ink);color:var(--bg);text-decoration:none;font-weight:800;padding:12px 24px;border-radius:14px}
+.btn:hover{color:var(--bg);background:#4A2F1F}
+.btn .soon{display:block;font-size:12px;font-weight:600;opacity:.8}
+.promise{margin:36px 0 8px;background:var(--ink);color:var(--bg);border-radius:24px;padding:28px 22px;text-align:center}
+.promise .big{font-size:40px;font-weight:900;line-height:1.2;margin:0 0 10px;color:#FFD9BD}
+.promise p{margin:0 0 10px}
+.promise a{color:#FFB98A}
+.cards{display:grid;gap:14px;grid-template-columns:1fr}
+@media (min-width:640px){.cards.two{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px}
+.card.dash{background:transparent;border:2px dashed #D9C3A8;text-align:center;color:var(--muted)}
+.card svg.pic{display:block;width:100%;max-width:170px;height:auto;margin:0 auto 12px}
+.pill{display:inline-block;font-size:13px;font-weight:700;color:var(--accent);background:var(--soft);border-radius:999px;padding:1px 10px;margin-left:6px;vertical-align:2px}
+.price{display:grid;gap:10px;grid-template-columns:1fr}
+@media (min-width:560px){.price{grid-template-columns:1fr 1fr}}
+.price div{background:var(--soft);border-radius:16px;padding:14px 16px}
+.price b{display:block;font-size:18px}
+.tips{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:10px 0 14px}
+@media (min-width:560px){.tips{grid-template-columns:repeat(4,1fr)}}
+.tips div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px;text-align:center;font-weight:700;line-height:1.4}
+.tips span{display:block;font-weight:600;color:var(--muted);font-size:14px}
+.doc h2{font-size:21px;margin:34px 0 8px;padding-top:6px}
+.doc .eff{display:inline-block;background:var(--soft);border-radius:10px;padding:4px 12px;font-weight:700;font-size:15px}
+.hl{background:var(--soft);border-left:5px solid var(--accent);border-radius:12px;padding:14px 16px;margin:18px 0}
+.hl strong{font-size:20px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 16px;margin:10px 0}
+summary{font-weight:800;cursor:pointer}
+details[open] summary{margin-bottom:8px}
+footer{margin-top:48px;border-top:1px solid var(--line);padding:22px 0 30px;text-align:center}
+footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;margin-bottom:10px}
+footer nav a{font-weight:700;text-decoration:none}
+footer nav a[aria-current]{color:var(--ink)}
+footer p{margin:4px 0;font-size:14px;color:var(--muted)}
+</style>
+</head>
+<body>
+<!-- 本站不使用 cookie、分析、追蹤、外部字型或任何第三方腳本。 -->
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html"><svg class="logo" width="40" height="40" viewBox="0 0 1024 1024" role="img" aria-label="猴子吱吱 Sassy Monkeys" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" rx="230" fill="#2B1A10"/><circle cx="250" cy="600" r="120" fill="#E9A66B"/><circle cx="774" cy="600" r="120" fill="#E9A66B"/><ellipse cx="512" cy="560" rx="300" ry="260" fill="#E9A66B"/><path d="M512 330 C500 230 560 170 620 175 C690 180 700 270 650 285 C610 297 590 255 615 238" fill="none" stroke="#E9A66B" stroke-width="40" stroke-linecap="round"/><ellipse cx="512" cy="640" rx="210" ry="150" fill="#FDE8CF"/><circle cx="440" cy="610" r="30" fill="#2B1A10"/><circle cx="584" cy="610" r="30" fill="#2B1A10"/><path d="M452 690 Q512 740 572 690" fill="none" stroke="#2B1A10" stroke-width="24" stroke-linecap="round"/></svg><span>猴子吱吱<small>Sassy Monkeys</small></span></a>
+<nav class="sw" aria-label="語言 Language"><a class="s-zh" href="#zh" lang="zh-Hant">中文</a><a class="s-en" href="#en" lang="en">English</a></nav>
+</div></header>
+<main class="wrap">
+<section id="en" class="lang" lang="en">
+
+<div class="hero">
+<svg class="logo" width="128" height="128" viewBox="0 0 1024 1024" role="img" aria-label="猴子吱吱 Sassy Monkeys" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" rx="230" fill="#2B1A10"/><circle cx="250" cy="600" r="120" fill="#E9A66B"/><circle cx="774" cy="600" r="120" fill="#E9A66B"/><ellipse cx="512" cy="560" rx="300" ry="260" fill="#E9A66B"/><path d="M512 330 C500 230 560 170 620 175 C690 180 700 270 650 285 C610 297 590 255 615 238" fill="none" stroke="#E9A66B" stroke-width="40" stroke-linecap="round"/><ellipse cx="512" cy="640" rx="210" ry="150" fill="#FDE8CF"/><circle cx="440" cy="610" r="30" fill="#2B1A10"/><circle cx="584" cy="610" r="30" fill="#2B1A10"/><path d="M452 690 Q512 740 572 690" fill="none" stroke="#2B1A10" stroke-width="24" stroke-linecap="round"/></svg>
+<h1>Sassy Monkeys</h1>
+<p class="sub">猴子吱吱</p>
+<p class="tag">Logic puzzles starring flat-faced, cheeky, very cute monkeys. Every level has exactly one solution. No guessing: reason it out one step at a time.</p>
+<a class="btn" href="#">Download on the App Store<span class="soon">Coming soon</span></a>
+<p class="small muted" style="margin-top:12px">iPhone and iPad (iOS 17 or later) · Free to download</p>
+</div>
+
+<div class="promise">
+<p class="big">We collect no data</p>
+<p>No tracking, no ads, no account, no servers.<br>Your progress stays on your device and the app never uploads it. Deleting the app deletes your progress too.<br>Purchases are handled by Apple. Apart from App Store purchases, the app doesn't use the internet.</p>
+<p class="small"><a href="privacy.html#en">Read the full Privacy Policy →</a></p>
+</div>
+
+<h2>Two parks, 200 levels each</h2>
+<div class="cards two">
+<div class="card">
+<svg class="pic" viewBox="0 0 170 170" role="img" aria-label="Back Off! board example" xmlns="http://www.w3.org/2000/svg">
+<g stroke="none"><rect x="5" y="5" width="40" height="40" fill="#FFD6B8"/><rect x="45" y="5" width="40" height="40" fill="#FFD6B8"/><rect x="85" y="5" width="40" height="40" fill="#CDE8C4"/><rect x="125" y="5" width="40" height="40" fill="#CDE8C4"/>
+<rect x="5" y="45" width="40" height="40" fill="#FFD6B8"/><rect x="45" y="45" width="40" height="40" fill="#D9D2F2"/><rect x="85" y="45" width="40" height="40" fill="#CDE8C4"/><rect x="125" y="45" width="40" height="40" fill="#CDE8C4"/>
+<rect x="5" y="85" width="40" height="40" fill="#BFE0F5"/><rect x="45" y="85" width="40" height="40" fill="#D9D2F2"/><rect x="85" y="85" width="40" height="40" fill="#D9D2F2"/><rect x="125" y="85" width="40" height="40" fill="#CDE8C4"/>
+<rect x="5" y="125" width="40" height="40" fill="#BFE0F5"/><rect x="45" y="125" width="40" height="40" fill="#BFE0F5"/><rect x="85" y="125" width="40" height="40" fill="#D9D2F2"/><rect x="125" y="125" width="40" height="40" fill="#D9D2F2"/></g>
+<g fill="none" stroke="#2B1A10" stroke-width="1.5" stroke-dasharray="3 3"><path d="M45 5V165M85 5V165M125 5V165M5 45H165M5 85H165M5 125H165"/></g>
+<rect x="5" y="5" width="160" height="160" rx="6" fill="none" stroke="#2B1A10" stroke-width="4"/>
+<g><circle cx="65" cy="25" r="13" fill="#E9A66B"/><ellipse cx="65" cy="28" rx="8" ry="6" fill="#FDE8CF"/><circle cx="62" cy="27" r="1.6" fill="#2B1A10"/><circle cx="68" cy="27" r="1.6" fill="#2B1A10"/>
+<circle cx="145" cy="65" r="13" fill="#E9A66B"/><ellipse cx="145" cy="68" rx="8" ry="6" fill="#FDE8CF"/><circle cx="142" cy="67" r="1.6" fill="#2B1A10"/><circle cx="148" cy="67" r="1.6" fill="#2B1A10"/>
+<circle cx="25" cy="105" r="13" fill="#E9A66B"/><ellipse cx="25" cy="108" rx="8" ry="6" fill="#FDE8CF"/><circle cx="22" cy="107" r="1.6" fill="#2B1A10"/><circle cx="28" cy="107" r="1.6" fill="#2B1A10"/>
+<circle cx="105" cy="145" r="13" fill="#E9A66B"/><ellipse cx="105" cy="148" rx="8" ry="6" fill="#FDE8CF"/><circle cx="102" cy="147" r="1.6" fill="#2B1A10"/><circle cx="108" cy="147" r="1.6" fill="#2B1A10"/></g>
+<g fill="none" stroke="#E0B21F" stroke-width="5" stroke-linecap="round"><path d="M17 20 Q25 34 35 22"/><path d="M97 60 Q105 74 115 62"/><path d="M137 140 Q145 154 155 142"/><path d="M57 100 Q65 114 75 102"/></g>
+</svg>
+<h3>Back Off!<span class="pill">不要貼貼！</span></h3>
+<p>These monkeys need their personal space. Exactly one monkey in every row, every column and every colored turf, and no two monkeys may touch, not even diagonally.</p>
+<ul class="small"><li>Tap once for a banana ("no monkey here"), again for a monkey</li><li>The first 3 levels place helper bananas for you</li><li>In level 1, the Old Monkey teaches you step by step</li></ul>
+</div>
+<div class="card">
+<svg class="pic" viewBox="0 0 170 170" role="img" aria-label="Hangry! board example" xmlns="http://www.w3.org/2000/svg">
+<rect x="5" y="5" width="160" height="160" rx="6" fill="#FFFFFF"/>
+<g fill="none" stroke="#2B1A10" stroke-width="1.5" stroke-dasharray="3 3"><path d="M45 5V165M85 5V165M125 5V165M5 45H165M5 85H165M5 125H165"/></g>
+<g fill="none" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+<path d="M25 25H145V65H25V105" stroke="#7CC36B"/>
+<path d="M65 105H145V145H25" stroke="#A58BDB"/></g>
+<rect x="5" y="5" width="160" height="160" rx="6" fill="none" stroke="#2B1A10" stroke-width="4"/>
+<g><circle cx="25" cy="25" r="14" fill="#E9A66B"/><ellipse cx="25" cy="28" rx="9" ry="6.5" fill="#FDE8CF"/><circle cx="22" cy="27" r="1.7" fill="#2B1A10"/><circle cx="28" cy="27" r="1.7" fill="#2B1A10"/>
+<circle cx="65" cy="105" r="14" fill="#E9A66B"/><ellipse cx="65" cy="108" rx="9" ry="6.5" fill="#FDE8CF"/><path d="M60 104l4 2M70 104l-4 2" stroke="#2B1A10" stroke-width="1.8" stroke-linecap="round"/><path d="M61 112q4-3 8 0" fill="none" stroke="#2B1A10" stroke-width="1.8" stroke-linecap="round"/></g>
+<g fill="none" stroke="#E0B21F" stroke-width="7" stroke-linecap="round"><path d="M15 97 Q25 115 36 100"/><path d="M15 137 Q25 155 36 140"/></g>
+</svg>
+<h3>Hangry!<span class="pill">香蕉外送中</span></h3>
+<p>A hungry monkey is a grumpy monkey. Drag a vine from each monkey to the banana of the same color. Vines can't cross, and every square must be filled.</p>
+<ul class="small"><li>Monkeys who haven't reached their banana get mad</li><li>Fill every square to clear the level</li></ul>
+</div>
+</div>
+<div class="cards" style="margin-top:14px"><div class="card dash">More parks are on the way. Squeak!</div></div>
+
+<h2>Stuck? Ask the Old Monkey</h2>
+<p>The Old Monkey doesn't just hand you the answer. He tells you why, like "this turf has only one square left", so you learn the trick instead of just getting past the level.</p>
+
+<h2>Squeaks, tunes and sass</h2>
+<ul>
+<li>13 monkey expressions, each with its own squeak</li>
+<li>Every park has its own sound effects and music; the lobby plays laid-back lo-fi</li>
+<li>All artwork, sounds and music are original</li>
+</ul>
+
+<h2>Pricing</h2>
+<div class="price">
+<div><b>Free to download</b>The first 20 levels of every park are free</div>
+<div><b>Unlock one park at a time</b>A one-time purchase (US$4.99 in the U.S.; local App Store prices elsewhere). Yours to keep, works with Family Sharing</div>
+<div><b>No subscriptions</b>Nothing renews</div>
+<div><b>No ads</b>Not a single one</div>
+</div>
+
+<h2>Buy the Developer a Coffee</h2>
+<p>Sassy Monkeys is made by one independent developer. If the monkeys make you smile, you can leave a tip in the app under <strong>Settings → Buy the Developer a Coffee</strong>:</p>
+<div class="tips"><div>A Coffee<span>US$1.99</span></div><div>A Lunch<span>US$4.99</span></div><div>A Dinner<span>US$9.99</span></div><div>Super Supporter<span>US$99.99</span></div></div>
+<p class="muted">Tips are purely a thank-you and <strong>unlock nothing</strong>; the game is exactly the same with or without them. U.S. prices shown; other regions follow the App Store.</p>
+
+<footer><nav aria-label="Site pages"><a href="index.html#en" aria-current="page">Home</a><a href="privacy.html#en">Privacy Policy</a><a href="terms.html#en">Terms of Use</a><a href="support.html#en">Support</a></nav><p>Contact: <a href="mailto:harveyyun8622@gmail.com">harveyyun8622@gmail.com</a></p><p>© 2026 musicloveAI</p></footer>
+</section>
+<section id="zh" class="lang" lang="zh-Hant">
+
+<div class="hero">
+<svg class="logo" width="128" height="128" viewBox="0 0 1024 1024" role="img" aria-label="猴子吱吱 Sassy Monkeys" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" rx="230" fill="#2B1A10"/><circle cx="250" cy="600" r="120" fill="#E9A66B"/><circle cx="774" cy="600" r="120" fill="#E9A66B"/><ellipse cx="512" cy="560" rx="300" ry="260" fill="#E9A66B"/><path d="M512 330 C500 230 560 170 620 175 C690 180 700 270 650 285 C610 297 590 255 615 238" fill="none" stroke="#E9A66B" stroke-width="40" stroke-linecap="round"/><ellipse cx="512" cy="640" rx="210" ry="150" fill="#FDE8CF"/><circle cx="440" cy="610" r="30" fill="#2B1A10"/><circle cx="584" cy="610" r="30" fill="#2B1A10"/><path d="M452 690 Q512 740 572 690" fill="none" stroke="#2B1A10" stroke-width="24" stroke-linecap="round"/></svg>
+<h1>猴子吱吱</h1>
+<p class="sub">Sassy Monkeys</p>
+<p class="tag">扁臉、欠扁、可愛到犯規的猴子益智樂園。每一關都只有唯一解，不用猜，一步一步推理就解得出來。</p>
+<a class="btn" href="#">App Store 下載<span class="soon">即將上架</span></a>
+<p class="small muted" style="margin-top:12px">iPhone・iPad（iOS 17 以上）．免費下載</p>
+</div>
+
+<div class="promise">
+<p class="big">不收集任何資料</p>
+<p>不追蹤、沒有廣告、沒有帳號、沒有伺服器。<br>遊戲進度只存在你的裝置裡，App 不會上傳；刪除 App 會一起刪除進度。<br>購買由 Apple 處理。除了 App Store 購買，App 不使用網路。</p>
+<p class="small"><a href="privacy.html">看完整隱私權政策 →</a></p>
+</div>
+
+<h2>兩座樂園，各 200 關</h2>
+<div class="cards two">
+<div class="card">
+<svg class="pic" viewBox="0 0 170 170" role="img" aria-label="不要貼貼！盤面示意" xmlns="http://www.w3.org/2000/svg">
+<g stroke="none"><rect x="5" y="5" width="40" height="40" fill="#FFD6B8"/><rect x="45" y="5" width="40" height="40" fill="#FFD6B8"/><rect x="85" y="5" width="40" height="40" fill="#CDE8C4"/><rect x="125" y="5" width="40" height="40" fill="#CDE8C4"/>
+<rect x="5" y="45" width="40" height="40" fill="#FFD6B8"/><rect x="45" y="45" width="40" height="40" fill="#D9D2F2"/><rect x="85" y="45" width="40" height="40" fill="#CDE8C4"/><rect x="125" y="45" width="40" height="40" fill="#CDE8C4"/>
+<rect x="5" y="85" width="40" height="40" fill="#BFE0F5"/><rect x="45" y="85" width="40" height="40" fill="#D9D2F2"/><rect x="85" y="85" width="40" height="40" fill="#D9D2F2"/><rect x="125" y="85" width="40" height="40" fill="#CDE8C4"/>
+<rect x="5" y="125" width="40" height="40" fill="#BFE0F5"/><rect x="45" y="125" width="40" height="40" fill="#BFE0F5"/><rect x="85" y="125" width="40" height="40" fill="#D9D2F2"/><rect x="125" y="125" width="40" height="40" fill="#D9D2F2"/></g>
+<g fill="none" stroke="#2B1A10" stroke-width="1.5" stroke-dasharray="3 3"><path d="M45 5V165M85 5V165M125 5V165M5 45H165M5 85H165M5 125H165"/></g>
+<rect x="5" y="5" width="160" height="160" rx="6" fill="none" stroke="#2B1A10" stroke-width="4"/>
+<g><circle cx="65" cy="25" r="13" fill="#E9A66B"/><ellipse cx="65" cy="28" rx="8" ry="6" fill="#FDE8CF"/><circle cx="62" cy="27" r="1.6" fill="#2B1A10"/><circle cx="68" cy="27" r="1.6" fill="#2B1A10"/>
+<circle cx="145" cy="65" r="13" fill="#E9A66B"/><ellipse cx="145" cy="68" rx="8" ry="6" fill="#FDE8CF"/><circle cx="142" cy="67" r="1.6" fill="#2B1A10"/><circle cx="148" cy="67" r="1.6" fill="#2B1A10"/>
+<circle cx="25" cy="105" r="13" fill="#E9A66B"/><ellipse cx="25" cy="108" rx="8" ry="6" fill="#FDE8CF"/><circle cx="22" cy="107" r="1.6" fill="#2B1A10"/><circle cx="28" cy="107" r="1.6" fill="#2B1A10"/>
+<circle cx="105" cy="145" r="13" fill="#E9A66B"/><ellipse cx="105" cy="148" rx="8" ry="6" fill="#FDE8CF"/><circle cx="102" cy="147" r="1.6" fill="#2B1A10"/><circle cx="108" cy="147" r="1.6" fill="#2B1A10"/></g>
+<g fill="none" stroke="#E0B21F" stroke-width="5" stroke-linecap="round"><path d="M17 20 Q25 34 35 22"/><path d="M97 60 Q105 74 115 62"/><path d="M137 140 Q145 154 155 142"/><path d="M57 100 Q65 114 75 102"/></g>
+</svg>
+<h3>不要貼貼！<span class="pill">Back Off!</span></h3>
+<p>這群猴子非常需要個人空間。每一行、每一列、每一塊彩色地盤都要剛好一隻猴子，而且猴子不能相鄰，斜角也不行。</p>
+<ul class="small"><li>點一下放香蕉（代表這格沒猴子），再點一下放猴子</li><li>前 3 關自動幫你放香蕉</li><li>第 1 關有老猴子一步一步教</li></ul>
+</div>
+<div class="card">
+<svg class="pic" viewBox="0 0 170 170" role="img" aria-label="香蕉外送中盤面示意" xmlns="http://www.w3.org/2000/svg">
+<rect x="5" y="5" width="160" height="160" rx="6" fill="#FFFFFF"/>
+<g fill="none" stroke="#2B1A10" stroke-width="1.5" stroke-dasharray="3 3"><path d="M45 5V165M85 5V165M125 5V165M5 45H165M5 85H165M5 125H165"/></g>
+<g fill="none" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+<path d="M25 25H145V65H25V105" stroke="#7CC36B"/>
+<path d="M65 105H145V145H25" stroke="#A58BDB"/></g>
+<rect x="5" y="5" width="160" height="160" rx="6" fill="none" stroke="#2B1A10" stroke-width="4"/>
+<g><circle cx="25" cy="25" r="14" fill="#E9A66B"/><ellipse cx="25" cy="28" rx="9" ry="6.5" fill="#FDE8CF"/><circle cx="22" cy="27" r="1.7" fill="#2B1A10"/><circle cx="28" cy="27" r="1.7" fill="#2B1A10"/>
+<circle cx="65" cy="105" r="14" fill="#E9A66B"/><ellipse cx="65" cy="108" rx="9" ry="6.5" fill="#FDE8CF"/><path d="M60 104l4 2M70 104l-4 2" stroke="#2B1A10" stroke-width="1.8" stroke-linecap="round"/><path d="M61 112q4-3 8 0" fill="none" stroke="#2B1A10" stroke-width="1.8" stroke-linecap="round"/></g>
+<g fill="none" stroke="#E0B21F" stroke-width="7" stroke-linecap="round"><path d="M15 97 Q25 115 36 100"/><path d="M15 137 Q25 155 36 140"/></g>
+</svg>
+<h3>香蕉外送中<span class="pill">Hangry!</span></h3>
+<p>猴子一餓，脾氣就來。從猴子拖出藤蔓連到同色香蕉，藤蔓不能交叉，還要鋪滿每一格。</p>
+<ul class="small"><li>還沒吃到香蕉的猴子會一直生氣</li><li>每一格都要鋪滿才算過關</li></ul>
+</div>
+</div>
+<div class="cards" style="margin-top:14px"><div class="card dash">更多樂園陸續推出．吱吱！</div></div>
+
+<h2>卡關？問問老猴子</h2>
+<p>老猴子不會直接把答案丟給你，而是告訴你為什麼，例如「這塊地盤只剩一格」。學會這一招，下一關就不會再卡。</p>
+
+<h2>吱吱叫、配樂和欠扁表情</h2>
+<ul>
+<li>13 種猴子表情，每一種都有自己的吱吱叫聲</li>
+<li>每座樂園有自己的音效與背景音樂，大廳是放鬆的 lo-fi 音樂</li>
+<li>所有圖案、音效、音樂都是原創</li>
+</ul>
+
+<h2>收費方式</h2>
+<div class="price">
+<div><b>免費下載</b>每座樂園前 20 關免費</div>
+<div><b>單獨買斷一座樂園</b>一次付費（美國 US$4.99，各國依 App Store 價格），永久擁有，支援家人共享</div>
+<div><b>沒有訂閱</b>不會自動扣款</div>
+<div><b>沒有廣告</b>一則都沒有</div>
+</div>
+
+<h2>請開發者喝杯咖啡</h2>
+<p>猴子吱吱是一個人獨立開發的。如果猴子們讓你開心，可以在 App 的<strong>「設定」→「請開發者喝杯咖啡」</strong>打賞：</p>
+<div class="tips"><div>一杯咖啡<span>US$1.99</span></div><div>一個便當<span>US$4.99</span></div><div>一頓晚餐<span>US$9.99</span></div><div>超級贊助<span>US$99.99</span></div></div>
+<p class="muted">打賞純粹是心意，<strong>不會解鎖任何功能</strong>，有沒有打賞，遊戲內容都一樣。價格為美國售價，其他地區依 App Store 顯示為準。</p>
+
+<footer><nav aria-label="網站頁面"><a href="index.html" aria-current="page">首頁</a><a href="privacy.html">隱私權政策</a><a href="terms.html">使用條款</a><a href="support.html">支援</a></nav><p>聯絡：<a href="mailto:harveyyun8622@gmail.com">harveyyun8622@gmail.com</a></p><p>© 2026 musicloveAI</p></footer>
+</section>
+</main>
+</body>
+</html>
