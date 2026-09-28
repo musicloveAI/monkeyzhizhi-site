@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>猴子吱吱 Sassy Monkeys</title>
-<meta name="description" content="猴子吱吱（Sassy Monkeys）：欠扁猴子的邏輯益智遊戲。每關唯一解、每座樂園前 20 關免費、沒有廣告、不收集任何資料。">
+<meta name="description" content="猴子吱吱（Sassy Monkeys）：欠扁猴子的邏輯益智遊戲。三座樂園、600 關，每座樂園前 20 關免費、沒有廣告、不收集任何資料。">
 <meta name="theme-color" content="#FFFAF2">
 <meta name="referrer" content="no-referrer">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%201024%201024%22%3E%3Crect%20width%3D%221024%22%20height%3D%221024%22%20rx%3D%22230%22%20fill%3D%22%232B1A10%22/%3E%3Ccircle%20cx%3D%22250%22%20cy%3D%22600%22%20r%3D%22120%22%20fill%3D%22%23E9A66B%22/%3E%3Ccircle%20cx%3D%22774%22%20cy%3D%22600%22%20r%3D%22120%22%20fill%3D%22%23E9A66B%22/%3E%3Cellipse%20cx%3D%22512%22%20cy%3D%22560%22%20rx%3D%22300%22%20ry%3D%22260%22%20fill%3D%22%23E9A66B%22/%3E%3Cpath%20d%3D%22M512%20330%20C500%20230%20560%20170%20620%20175%20C690%20180%20700%20270%20650%20285%20C610%20297%20590%20255%20615%20238%22%20fill%3D%22none%22%20stroke%3D%22%23E9A66B%22%20stroke-width%3D%2240%22%20stroke-linecap%3D%22round%22/%3E%3Cellipse%20cx%3D%22512%22%20cy%3D%22640%22%20rx%3D%22210%22%20ry%3D%22150%22%20fill%3D%22%23FDE8CF%22/%3E%3Ccircle%20cx%3D%22440%22%20cy%3D%22610%22%20r%3D%2230%22%20fill%3D%22%232B1A10%22/%3E%3Ccircle%20cx%3D%22584%22%20cy%3D%22610%22%20r%3D%2230%22%20fill%3D%22%232B1A10%22/%3E%3Cpath%20d%3D%22M452%20690%20Q512%20740%20572%20690%22%20fill%3D%22none%22%20stroke%3D%22%232B1A10%22%20stroke-width%3D%2224%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E">
@@ -53,7 +53,7 @@ li{margin:4px 0}
 .promise p{margin:0 0 10px}
 .promise a{color:#FFB98A}
 .cards{display:grid;gap:14px;grid-template-columns:1fr}
-@media (min-width:640px){.cards.two{grid-template-columns:1fr 1fr}}
+@media (min-width:640px){.cards.two{grid-template-columns:1fr 1fr}.cards.two>.card:nth-child(3){grid-column:1/-1}}
 .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px}
 .card.dash{background:transparent;border:2px dashed #D9C3A8;text-align:center;color:var(--muted)}
 .card svg.pic{display:block;width:100%;max-width:170px;height:auto;margin:0 auto 12px}
@@ -93,7 +93,7 @@ footer p{margin:4px 0;font-size:14px;color:var(--muted)}
 <svg class="logo" width="128" height="128" viewBox="0 0 1024 1024" role="img" aria-label="猴子吱吱 Sassy Monkeys" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" rx="230" fill="#2B1A10"/><circle cx="250" cy="600" r="120" fill="#E9A66B"/><circle cx="774" cy="600" r="120" fill="#E9A66B"/><ellipse cx="512" cy="560" rx="300" ry="260" fill="#E9A66B"/><path d="M512 330 C500 230 560 170 620 175 C690 180 700 270 650 285 C610 297 590 255 615 238" fill="none" stroke="#E9A66B" stroke-width="40" stroke-linecap="round"/><ellipse cx="512" cy="640" rx="210" ry="150" fill="#FDE8CF"/><circle cx="440" cy="610" r="30" fill="#2B1A10"/><circle cx="584" cy="610" r="30" fill="#2B1A10"/><path d="M452 690 Q512 740 572 690" fill="none" stroke="#2B1A10" stroke-width="24" stroke-linecap="round"/></svg>
 <h1>Sassy Monkeys</h1>
 <p class="sub">猴子吱吱</p>
-<p class="tag">Logic puzzles starring flat-faced, cheeky, very cute monkeys. Every level has exactly one solution. No guessing: reason it out one step at a time.</p>
+<p class="tag">Logic puzzles starring flat-faced, cheeky, very cute monkeys. Three parks, 600 levels, and no guessing: reason it out one step at a time.</p>
 <a class="btn" href="#">Download on the App Store<span class="soon">Coming soon</span></a>
 <p class="small muted" style="margin-top:12px">iPhone and iPad (iOS 17 or later) · Free to download</p>
 </div>
@@ -104,7 +104,7 @@ footer p{margin:4px 0;font-size:14px;color:var(--muted)}
 <p class="small"><a href="privacy.html#en">Read the full Privacy Policy →</a></p>
 </div>
 
-<h2>Two parks, 200 levels each</h2>
+<h2>Three parks, 200 levels each</h2>
 <div class="cards two">
 <div class="card">
 <svg class="pic" viewBox="0 0 170 170" role="img" aria-label="Back Off! board example" xmlns="http://www.w3.org/2000/svg">
@@ -140,6 +140,28 @@ footer p{margin:4px 0;font-size:14px;color:var(--muted)}
 <p>A hungry monkey is a grumpy monkey. Drag a vine from each monkey to the banana of the same color. Vines can't cross, and every square must be filled.</p>
 <ul class="small"><li>Monkeys who haven't reached their banana get mad</li><li>Fill every square to clear the level</li></ul>
 </div>
+<div class="card">
+<svg class="pic" viewBox="0 0 190 170" role="img" aria-label="Outta My Way! board example" xmlns="http://www.w3.org/2000/svg">
+<rect x="5" y="5" width="160" height="160" rx="6" fill="#F6EFE2"/>
+<rect x="5" y="47" width="180" height="36" fill="#F2C94E" opacity="0.2"/>
+<g fill="none" stroke="#2B1A10" stroke-width="1.5" stroke-dasharray="3 3"><path d="M45 5V165M85 5V165M125 5V165M5 45H165M5 85H165M5 125H165"/></g>
+<path d="M165 45V11Q165 5 159 5H11Q5 5 5 11V159Q5 165 11 165H159Q165 165 165 159V85" fill="none" stroke="#2B1A10" stroke-width="4"/>
+<path d="M172 57l9 8-9 8" fill="none" stroke="#E07B3A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="89" y="9" width="32" height="72" rx="15" fill="#9CC9EC" stroke="#2B1A10" stroke-width="2.5"/>
+<circle cx="105" cy="26" r="12" fill="#9CC9EC" stroke="#2B1A10" stroke-width="2"/><ellipse cx="105" cy="29" rx="7.5" ry="5.5" fill="#FDE8CF"/><path d="M100 28q2 1.5 4 0M106 28q2 1.5 4 0" fill="none" stroke="#2B1A10" stroke-width="1.5" stroke-linecap="round"/>
+<text x="118" y="16" font-family="sans-serif" font-size="9" font-weight="700" fill="#2B1A10" opacity="0.6">z z</text>
+<rect x="49" y="129" width="112" height="32" rx="15" fill="#A98BE0" stroke="#2B1A10" stroke-width="2.5"/>
+<circle cx="66" cy="145" r="12" fill="#A98BE0" stroke="#2B1A10" stroke-width="2"/><ellipse cx="66" cy="148" rx="7.5" ry="5.5" fill="#FDE8CF"/><circle cx="63" cy="146" r="1.5" fill="#2B1A10"/><circle cx="69" cy="146" r="1.5" fill="#2B1A10"/>
+<rect x="9" y="49" width="72" height="32" rx="10" fill="#F2C94E" stroke="#2B1A10" stroke-width="2.5"/>
+<path d="M17 62 Q25 76 35 64" fill="none" stroke="#E0B21F" stroke-width="5" stroke-linecap="round"/>
+<circle cx="65" cy="63" r="11" fill="#E9A66B" stroke="#2B1A10" stroke-width="2"/><ellipse cx="65" cy="66" rx="7" ry="5" fill="#FDE8CF"/><circle cx="62" cy="64" r="1.5" fill="#2B1A10"/><circle cx="68" cy="64" r="1.5" fill="#2B1A10"/>
+<circle cx="22" cy="82" r="4" fill="#2B1A10"/><circle cx="68" cy="82" r="4" fill="#2B1A10"/>
+<rect x="129" y="89" width="32" height="32" rx="12" fill="#A8A29A" stroke="#2B1A10" stroke-width="2.5"/>
+</svg>
+<h3>Outta My Way!<span class="pill">借過借過！</span></h3>
+<p>Eek is pushing a banana cart home, and sleepy, sprawling monkeys are lying across the road. Drag them aside (each one only slides the way it's lying) and roll the cart out the exit.</p>
+<ul class="small"><li>Poke a sleepy monkey and it wakes up with a grumpy "huh?"</li><li>Gray rocks don't budge</li><li>The screen shows the fewest moves possible</li></ul>
+</div>
 </div>
 <div class="cards" style="margin-top:14px"><div class="card dash">More parks are on the way. Squeak!</div></div>
 
@@ -156,7 +178,7 @@ footer p{margin:4px 0;font-size:14px;color:var(--muted)}
 <h2>Pricing</h2>
 <div class="price">
 <div><b>Free to download</b>The first 20 levels of every park are free</div>
-<div><b>Unlock one park at a time</b>A one-time purchase (US$4.99 in the U.S.; local App Store prices elsewhere). Yours to keep, works with Family Sharing</div>
+<div><b>Unlock one park at a time</b>A one-time purchase (US$4.99 in the U.S.; local App Store prices elsewhere). Yours to keep, and restorable on a new device</div>
 <div><b>No subscriptions</b>Nothing renews</div>
 <div><b>No ads</b>Not a single one</div>
 </div>
@@ -174,7 +196,7 @@ footer p{margin:4px 0;font-size:14px;color:var(--muted)}
 <svg class="logo" width="128" height="128" viewBox="0 0 1024 1024" role="img" aria-label="猴子吱吱 Sassy Monkeys" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" rx="230" fill="#2B1A10"/><circle cx="250" cy="600" r="120" fill="#E9A66B"/><circle cx="774" cy="600" r="120" fill="#E9A66B"/><ellipse cx="512" cy="560" rx="300" ry="260" fill="#E9A66B"/><path d="M512 330 C500 230 560 170 620 175 C690 180 700 270 650 285 C610 297 590 255 615 238" fill="none" stroke="#E9A66B" stroke-width="40" stroke-linecap="round"/><ellipse cx="512" cy="640" rx="210" ry="150" fill="#FDE8CF"/><circle cx="440" cy="610" r="30" fill="#2B1A10"/><circle cx="584" cy="610" r="30" fill="#2B1A10"/><path d="M452 690 Q512 740 572 690" fill="none" stroke="#2B1A10" stroke-width="24" stroke-linecap="round"/></svg>
 <h1>猴子吱吱</h1>
 <p class="sub">Sassy Monkeys</p>
-<p class="tag">扁臉、欠扁、可愛到犯規的猴子益智樂園。每一關都只有唯一解，不用猜，一步一步推理就解得出來。</p>
+<p class="tag">扁臉、欠扁、可愛到犯規的猴子益智樂園。三座樂園、600 關，完全不用猜，一步一步推理就解得出來。</p>
 <a class="btn" href="#">App Store 下載<span class="soon">即將上架</span></a>
 <p class="small muted" style="margin-top:12px">iPhone・iPad（iOS 17 以上）．免費下載</p>
 </div>
@@ -185,7 +207,7 @@ footer p{margin:4px 0;font-size:14px;color:var(--muted)}
 <p class="small"><a href="privacy.html">看完整隱私權政策 →</a></p>
 </div>
 
-<h2>兩座樂園，各 200 關</h2>
+<h2>三座樂園，各 200 關</h2>
 <div class="cards two">
 <div class="card">
 <svg class="pic" viewBox="0 0 170 170" role="img" aria-label="不要貼貼！盤面示意" xmlns="http://www.w3.org/2000/svg">
@@ -221,6 +243,28 @@ footer p{margin:4px 0;font-size:14px;color:var(--muted)}
 <p>猴子一餓，脾氣就來。從猴子拖出藤蔓連到同色香蕉，藤蔓不能交叉，還要鋪滿每一格。</p>
 <ul class="small"><li>還沒吃到香蕉的猴子會一直生氣</li><li>每一格都要鋪滿才算過關</li></ul>
 </div>
+<div class="card">
+<svg class="pic" viewBox="0 0 190 170" role="img" aria-label="借過借過！盤面示意" xmlns="http://www.w3.org/2000/svg">
+<rect x="5" y="5" width="160" height="160" rx="6" fill="#F6EFE2"/>
+<rect x="5" y="47" width="180" height="36" fill="#F2C94E" opacity="0.2"/>
+<g fill="none" stroke="#2B1A10" stroke-width="1.5" stroke-dasharray="3 3"><path d="M45 5V165M85 5V165M125 5V165M5 45H165M5 85H165M5 125H165"/></g>
+<path d="M165 45V11Q165 5 159 5H11Q5 5 5 11V159Q5 165 11 165H159Q165 165 165 159V85" fill="none" stroke="#2B1A10" stroke-width="4"/>
+<path d="M172 57l9 8-9 8" fill="none" stroke="#E07B3A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="89" y="9" width="32" height="72" rx="15" fill="#9CC9EC" stroke="#2B1A10" stroke-width="2.5"/>
+<circle cx="105" cy="26" r="12" fill="#9CC9EC" stroke="#2B1A10" stroke-width="2"/><ellipse cx="105" cy="29" rx="7.5" ry="5.5" fill="#FDE8CF"/><path d="M100 28q2 1.5 4 0M106 28q2 1.5 4 0" fill="none" stroke="#2B1A10" stroke-width="1.5" stroke-linecap="round"/>
+<text x="118" y="16" font-family="sans-serif" font-size="9" font-weight="700" fill="#2B1A10" opacity="0.6">z z</text>
+<rect x="49" y="129" width="112" height="32" rx="15" fill="#A98BE0" stroke="#2B1A10" stroke-width="2.5"/>
+<circle cx="66" cy="145" r="12" fill="#A98BE0" stroke="#2B1A10" stroke-width="2"/><ellipse cx="66" cy="148" rx="7.5" ry="5.5" fill="#FDE8CF"/><circle cx="63" cy="146" r="1.5" fill="#2B1A10"/><circle cx="69" cy="146" r="1.5" fill="#2B1A10"/>
+<rect x="9" y="49" width="72" height="32" rx="10" fill="#F2C94E" stroke="#2B1A10" stroke-width="2.5"/>
+<path d="M17 62 Q25 76 35 64" fill="none" stroke="#E0B21F" stroke-width="5" stroke-linecap="round"/>
+<circle cx="65" cy="63" r="11" fill="#E9A66B" stroke="#2B1A10" stroke-width="2"/><ellipse cx="65" cy="66" rx="7" ry="5" fill="#FDE8CF"/><circle cx="62" cy="64" r="1.5" fill="#2B1A10"/><circle cx="68" cy="64" r="1.5" fill="#2B1A10"/>
+<circle cx="22" cy="82" r="4" fill="#2B1A10"/><circle cx="68" cy="82" r="4" fill="#2B1A10"/>
+<rect x="129" y="89" width="32" height="32" rx="12" fill="#A8A29A" stroke="#2B1A10" stroke-width="2.5"/>
+</svg>
+<h3>借過借過！<span class="pill">Outta My Way!</span></h3>
+<p>吱吱推著香蕉推車要回家，路上卻躺滿了睡死猴和路霸猴。把牠們拖開（只能沿著自己躺的方向滑），把推車推出出口。</p>
+<ul class="small"><li>戳醒睡死猴會被「嗯？」一聲</li><li>灰色的石頭推不動</li><li>畫面會顯示最少要幾步</li></ul>
+</div>
 </div>
 <div class="cards" style="margin-top:14px"><div class="card dash">更多樂園陸續推出．吱吱！</div></div>
 
@@ -237,7 +281,7 @@ footer p{margin:4px 0;font-size:14px;color:var(--muted)}
 <h2>收費方式</h2>
 <div class="price">
 <div><b>免費下載</b>每座樂園前 20 關免費</div>
-<div><b>單獨買斷一座樂園</b>一次付費（美國 US$4.99，各國依 App Store 價格），永久擁有，支援家人共享</div>
+<div><b>單獨買斷一座樂園</b>一次付費（美國 US$4.99，各國依 App Store 價格），永久擁有，換手機也能恢復購買</div>
 <div><b>沒有訂閱</b>不會自動扣款</div>
 <div><b>沒有廣告</b>一則都沒有</div>
 </div>
